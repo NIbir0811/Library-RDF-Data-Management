@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      xmlns:ex="http://users.jyu.fi/~tanibir/"
+      xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Library Information</title>
+</head>
+<body vocab="http://users.jyu.fi/~tanibir/">
+
+    <h1>Library Collection</h1>
+
+    <h2>Books</h2>
+    <div typeof="ex:Book" about="http://users.jyu.fi/~tanibir/Book1">
+        <p><strong>Title:</strong> <span property="ex:hasTitle">The Great Gatsby</span></p>
+        <p><strong>ISBN:</strong> <span property="ex:hasISBN">9780743273565</span></p>
+        <p><strong>Publication Year:</strong> <span property="ex:publicationYear" datatype="xsd:integer">1925</span></p>
+        <p><strong>Genre:</strong> <a property="ex:hasGenre" href="http://users.jyu.fi/~tanibir/Fiction">Fiction</a></p>
+        <p><strong>Author:</strong> <a property="ex:hasAuthor" href="http://users.jyu.fi/~tanibir/Author1">F. Scott Fitzgerald</a></p>
+    </div>
+    
+    <div typeof="ex:Book" about="http://users.jyu.fi/~tanibir/Book2">
+        <p><strong>Title:</strong> <span property="ex:hasTitle">A Brief History of Time</span></p>
+        <p><strong>ISBN:</strong> <span property="ex:hasISBN">9780553380163</span></p>
+        <p><strong>Publication Year:</strong> <span property="ex:publicationYear" datatype="xsd:integer">1988</span></p>
+        <p><strong>Genre:</strong> <a property="ex:hasGenre" href="http://users.jyu.fi/~tanibir/NonFiction">Non-Fiction</a></p>
+        <p><strong>Author:</strong> <a property="ex:hasAuthor" href="http://users.jyu.fi/~tanibir/Author2">Stephen Hawking</a></p>
+    </div>
+    
+    <div typeof="ex:Book" about="http://users.jyu.fi/~tanibir/Book3">
+        <p><strong>Title:</strong> <span property="ex:hasTitle">The Grand Design</span></p>
+        <p><strong>ISBN:</strong> <span property="ex:hasISBN">2461389654327</span></p>
+        <p><strong>Publication Year:</strong> <span property="ex:publicationYear" datatype="xsd:integer">2010</span></p>
+        <p><strong>Genre:</strong> <a property="ex:hasGenre" href="http://users.jyu.fi/~tanibir/NonFiction">Non-Fiction</a></p>
+        <p><strong>Author:</strong> <a property="ex:hasAuthor" href="http://users.jyu.fi/~tanibir/Author2">Stephen Hawking</a></p>
+    </div>
+
+    <h2>Authors</h2>
+    <div typeof="ex:Author" about="http://users.jyu.fi/~tanibir/Author1">
+        <p><strong>Name:</strong> <span property="ex:name">F. Scott Fitzgerald</span></p>
+    </div>
+    
+    <div typeof="ex:Author" about="http://users.jyu.fi/~tanibir/Author2">
+        <p><strong>Name:</strong> <span property="ex:name">Stephen Hawking</span></p>
+    </div>
+
+    <h2>Library Branches</h2>
+    <div typeof="ex:LibraryBranch" about="http://users.jyu.fi/~tanibir/LibraryBranch1">
+        <p><strong>Code:</strong> <span property="ex:libraryCode">LB001</span></p>
+        <p><strong>Location:</strong> <span property="ex:locationName">Downtown</span></p>
+    </div>
+    
+    <div typeof="ex:LibraryBranch" about="http://users.jyu.fi/~tanibir/LibraryBranch2">
+        <p><strong>Code:</strong> <span property="ex:libraryCode">LB002</span></p>
+        <p><strong>Location:</strong> <span property="ex:locationName">University Campus</span></p>
+    </div>
+
+    <h2>Members</h2>
+    <div typeof="ex:Member" about="http://users.jyu.fi/~tanibir/Member1">
+        <p><strong>Member ID:</strong> <span property="ex:memberID">M001</span></p>
+        <p><strong>Name:</strong> <span property="ex:name">Alice Johnson</span></p>
+    </div>
+    
+    <div typeof="ex:Member" about="http://users.jyu.fi/~tanibir/Member2">
+        <p><strong>Member ID:</strong> <span property="ex:memberID">M002</span></p>
+        <p><strong>Name:</strong> <span property="ex:name">Bob Smith</span></p>
+    </div>
+
+    <h2>Loans</h2>
+    <div typeof="ex:Loan" about="http://users.jyu.fi/~tanibir/Loan1">
+        <p><strong>Borrowed By:</strong> <a property="ex:borrowedBy" href="http://users.jyu.fi/~tanibir/Member1">Alice Johnson</a></p>
+        <p><strong>Loan Period:</strong> <span property="ex:loanPeriod" datatype="xsd:integer">14</span> days</p>
+    </div>
+    
+    <div typeof="ex:Loan" about="http://users.jyu.fi/~tanibir/Loan2">
+        <p><strong>Borrowed By:</strong> <a property="ex:borrowedBy" href="http://users.jyu.fi/~tanibir/Member2">Bob Smith</a></p>
+        <p><strong>Loan Period:</strong> <span property="ex:loanPeriod" datatype="xsd:integer">21</span> days</p>
+    </div>
+    
+    <div typeof="ex:Loan" about="http://users.jyu.fi/~tanibir/Loan3">
+        <p><strong>Borrowed By:</strong> <a property="ex:borrowedBy" href="http://users.jyu.fi/~tanibir/Member1">Alice Johnson</a></p>
+        <p><strong>Loan Period:</strong> <span property="ex:loanPeriod" datatype="xsd:integer">25</span> days</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+ASK {
+    ?member <http://users.jyu.fi/~tanibir/memberID> ?id .
+    ?loan1 <http://users.jyu.fi/~tanibir/borrowedBy> ?member .
+    ?loan2 <http://users.jyu.fi/~tanibir/borrowedBy> ?member .
+    FILTER(?loan1 != ?loan2)
+}
+
+CONSTRUCT {
+    ?genre <http://users.jyu.fi/~tanibir/includes> ?book .
+    ?book <http://users.jyu.fi/~tanibir/title> ?title .
+}
+WHERE {
+    ?book <http://users.jyu.fi/~tanibir/hasGenre> ?genre ;
+          <http://users.jyu.fi/~tanibir/hasTitle> ?title .
+}
+
+
+DESCRIBE <http://users.jyu.fi/~tanibir/Book1>

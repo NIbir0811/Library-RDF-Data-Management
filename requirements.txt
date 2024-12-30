@@ -1,0 +1,5 @@
+flask
+rdflib
+requests
+html5lib
+beautifulsoup4

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RDFa SPARQL Reasoning Service</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; }
+        textarea, input { width: 100%; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>RDFa SPARQL Reasoning Service</h1>
+    <form id="queryForm">
+        <label>XHTML RDFa URL:</label>
+        <input type="url" id="url" required placeholder="Enter URL of XHTML with RDFa">
+        
+        <label>Rules (Optional):</label>
+        <textarea id="rules" placeholder="Enter custom rules (optional)
+Example:
+* foaf:knows * -> * foaf:knows *
+alice foaf:knows bob -> bob foaf:knows alice"></textarea>
+        
+        <label>SPARQL Query:</label>
+        <textarea id="sparqlQuery" required placeholder="Enter SPARQL query
+Example:
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name WHERE { 
+    ?s foaf:name ?name 
+}"></textarea>
+        
+        <button type="submit">Run Query</button>
+    </form>
+
+    <h2>Results:</h2>
+    <pre id="results"></pre>
+
+    <script>
+        $(document).ready(function() {
+            $('#queryForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                $.ajax({
+                    url: '/process',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        url: $('#url').val(),
+                        rules: $('#rules').val(),
+                        sparql_query: $('#sparqlQuery').val()
+                    }),
+                    success: function(response) {
+                        $('#results').text(JSON.stringify(response, null, 2));
+                    },
+                    error: function(xhr) {
+                        $('#results').text('Error: ' + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+"""
